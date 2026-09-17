@@ -1,0 +1,57 @@
+{
+  "name": "cover-agent-ts",
+  "version": "0.3.10-ts.1",
+  "description": "TypeScript port of qodo-ai/qodo-cover (cover-agent 0.3.10): coverage-driven LLM unit test generation",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "cover-agent": "dist/cli.js",
+    "cover-agent-report": "dist/reportCli.js"
+  },
+  "files": [
+    "dist",
+    "settings",
+    "LICENSE",
+    "MIGRATION.md",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "dev": "tsx src/cli.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/amazon-bedrock": "^5.0.86",
+    "@ai-sdk/anthropic": "^4.0.56",
+    "@ai-sdk/openai": "^4.0.69",
+    "@ai-sdk/openai-compatible": "^3.0.51",
+    "@aws-sdk/credential-providers": "^3.1134.0",
+    "ai": "^7.0.105",
+    "commander": "^15.0.0",
+    "fast-xml-parser": "^5.11.1",
+    "js-yaml": "^5.4.2",
+    "nunjucks": "^3.2.4",
+    "smol-toml": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.3",
+    "@types/nunjucks": "^3.2.6",
+    "@vitest/coverage-istanbul": "^5.0.1",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.1"
+  }
+}

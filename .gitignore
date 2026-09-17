@@ -1,0 +1,7 @@
+node_modules
+dist
+run.log
+cover_agent_unit_test_runs.db
+test_results.html
+/coverage
+tests/.tmp
